@@ -1,7 +1,11 @@
 class DiceController < ApplicationController
 
   def index
-    render :template => "dice/index"
+    @die1 = rand(1..6)
+    @die2 = rand(1..6)
+    @total = @die1 + @die2
   end
 
 end
+
+# aca dejo las logicas que van por atras del html
