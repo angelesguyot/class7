@@ -1,6 +1,7 @@
 class CompaniesController < ApplicationController
 
   def index
+    @companies = Company.all
     # find all Company rows
     # render companies/index view
   end
@@ -8,18 +9,20 @@ class CompaniesController < ApplicationController
   def show
     # find a Company
     # render companies/show view with details about Company
+    @company = Company.find_by({"id" => params["id"]})
   end
 
   def new
     # render view with new Company form
+
   end
 
-  # def create
+   def create
   #   # start with a new Company
   #   # assign user-entered form data to Company's columns
   #   # save Company row
   #   # redirect user
-  # end
+   end
 
   # def edit
   #   # find a Company
